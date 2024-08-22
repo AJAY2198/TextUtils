@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import NavBar from "./components/NavBar";
 import TextForm from "./components/TextForm";
-import { BrowserRouter as Router, Routes , Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes , Route } from "react-router-dom";
 import Alert from "./components/Alert";
 
 function App() {
@@ -40,17 +40,18 @@ function App() {
 
 
 
-        <Router>
+        {/* <Router> */}
         <NavBar title="Notepad" mode={mode} toggleMode ={toggleMode} />
         <Alert alert={alert}/>
       <div className="container my-3">
 
-        <Routes >
-        <Route exact path="/about" element ={<About/>}/>
-        <Route exact path="/" element = {<TextForm heading ="Enter your notes" mode={mode} showAlert={showAlert}/>}/>
-        </Routes >
+        {/* <Routes > */}
+        {/* <Route exact path="/about" element ={<About/>}/> */}
+        {/* <Route exact path="/" element = {<TextForm heading ="Enter your notes" mode={mode} showAlert={showAlert}/>}/> */}
+        <TextForm heading ="Enter your notes" mode={mode} showAlert={showAlert}/>
+        {/* </Routes > */}
       </div>
-    </Router>
+    {/* </Router> */}
      
     </>
   );
