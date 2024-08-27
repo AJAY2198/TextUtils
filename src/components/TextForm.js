@@ -29,15 +29,15 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
-  function lengthOfWord(text) {
-    let count = 0
-    for (let i = 0; i < text.split(" ").length; i++) {
-        if (text.split(" ")[i] === "") {
-            count++
-        }
-    }
-    return text.split(" ").length - count
-}
+//   function lengthOfWord(text) {
+//     let count = 0
+//     for (let i = 0; i < text.split(" ").length; i++) {
+//         if (text.split(" ")[i] === "") {
+//             count++
+//         }
+//     }
+//     return text.split(" ").length - count
+// }
   return (
     <>
     <div className="container"  style={{color: props.mode==='light'?'#021a33':'white'}}>
@@ -54,23 +54,23 @@ export default function TextForm(props) {
           rows="7"
         ></textarea>
       </div>
-      <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+      <button className="btn btn-primary mx-2 my-3" onClick={handleUpClick}>
         Covert to Uppercase
       </button>
-      <button className="btn btn-primary mx-2" onClick={handleLoClick}>
+      <button className="btn btn-primary mx-2 my-3" onClick={handleLoClick}>
         Covert to Uppercase
       </button>
-      <button className="btn btn-primary mx-2" onClick={clearNotes}>
+      <button className="btn btn-primary mx-2 my-3" onClick={clearNotes}>
        Clear Notes
       </button>
-      <button className="btn btn-primary mx-2" onClick={handleCopy}>
+      <button className="btn btn-primary mx-2 my-3" onClick={handleCopy}>
        Copy Text
       </button>
     </div>
     <div className="conatiner my-3" style={{color: props.mode==='light'?'#021a33':'white'}}>
       <h1>Your notes summry</h1>
       <p>
-       {lengthOfWord(text)} words and {text.length} charcters.
+       {text.split(" ").filter((str) => {return str.length !==0}).length} words and {text.length} charcters.
        <br/>
        {text !=="" ? 0.008 *text.split(" ").length: 0} Minutes to read.
       </p>
