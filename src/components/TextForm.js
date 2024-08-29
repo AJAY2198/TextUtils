@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
-  const [text, setText] = useState("enter notes here");
+  const [text, setText] = useState("Enter your notes here");
+
 
   const handleUpClick = () => {
     let newTxt = text.toUpperCase();
@@ -43,7 +44,7 @@ export default function TextForm(props) {
     <div className="container"  style={{color: props.mode==='light'?'#021a33':'white'}}>
       <div className="mb-3">
         <label htmlFor="myBox" className={`form-label text-${props.mode==='light'?'dark':'light'}`}>
-          {props.heading} 
+       <h1 className="mb-4">{props.heading} </h1>
         </label>
         <textarea
           className="form-control"
@@ -54,16 +55,16 @@ export default function TextForm(props) {
           rows="7"
         ></textarea>
       </div>
-      <button className="btn btn-primary mx-2 my-3" onClick={handleUpClick}>
+      <button disabled = {text.length === 0}className="btn btn-primary mx-2 my-3" onClick={handleUpClick}>
         Covert to Uppercase
       </button>
-      <button className="btn btn-primary mx-2 my-3" onClick={handleLoClick}>
+      <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-3" onClick={handleLoClick}>
         Covert to Uppercase
       </button>
-      <button className="btn btn-primary mx-2 my-3" onClick={clearNotes}>
+      <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-3" onClick={clearNotes}>
        Clear Notes
       </button>
-      <button className="btn btn-primary mx-2 my-3" onClick={handleCopy}>
+      <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-3" onClick={handleCopy}>
        Copy Text
       </button>
     </div>
@@ -75,7 +76,7 @@ export default function TextForm(props) {
        {text !=="" ? 0.008 *text.split(" ").length: 0} Minutes to read.
       </p>
       <h2>Preview</h2>
-      <p>{text.length >0 ?text:"Enter Something"}</p>
+      <p>{text.length >0 ?text:"Nothing to preview"}</p>
     </div>
  
     </>

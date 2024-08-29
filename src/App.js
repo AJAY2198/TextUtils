@@ -15,12 +15,12 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#021a33';
       showAlert("Dark mode has been enabled", "success");
-      document.title ="Notepad - Dark Mode";
+      // document.title ="Notepad - Dark Mode";
     }else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled", "success");
-      document.title ="Notepad - Light Mode";
+      // document.title ="Notepad - Light Mode";
     }
     
   };
@@ -47,7 +47,7 @@ function App() {
 
         <Routes >
         <Route exact path="/about" element ={<About mode={mode}/>}/>
-        <Route exact path="/" element = {<TextForm heading ="Enter your notes" mode={mode} showAlert={showAlert}/>}/>
+        <Route exact path="/" element = {<TextForm heading ="Try Notepad - Word Counter, Character counter" mode={mode} showAlert={showAlert}/>}/>
        
         </Routes >
       </div>
