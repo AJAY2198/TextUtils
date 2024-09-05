@@ -10,7 +10,19 @@ function App() {
   const [mode,setMode] = useState('light');
   const [alert, setAlert] = useState(null);
  
-  const toggleMode =()=>{
+  const removeBodyClasses =()=>{
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-success');
+  }
+  const toggleMode =(cls)=>{
+    removeBodyClasses();
+    if(typeof  cls === 'string'){
+      document.body.classList.add('bg-' +cls);  
+    }else{
     if(mode === 'light'){
       setMode('dark');
       document.body.style.backgroundColor = '#021a33';
@@ -22,6 +34,8 @@ function App() {
       showAlert("Light mode has been enabled", "success");
       // document.title ="Notepad - Light Mode";
     }
+  }
+    
     
   };
 

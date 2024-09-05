@@ -55,16 +55,16 @@ export default function TextForm(props) {
           rows="7"
         ></textarea>
       </div>
-      <button disabled = {text.length === 0}className="btn btn-primary mx-2 my-3" onClick={handleUpClick}>
+      <button disabled = {text.length === 0}className="btn btn-secondary mx-2 my-3" onClick={handleUpClick}>
         Covert to Uppercase
       </button>
-      <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-3" onClick={handleLoClick}>
+      <button disabled = {text.length === 0} className="btn btn-secondary mx-2 my-3" onClick={handleLoClick}>
         Covert to Uppercase
       </button>
-      <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-3" onClick={clearNotes}>
+      <button disabled = {text.length === 0} className="btn btn-secondary mx-2 my-3" onClick={clearNotes}>
        Clear Notes
       </button>
-      <button disabled = {text.length === 0} className="btn btn-primary mx-2 my-3" onClick={handleCopy}>
+      <button disabled = {text.length === 0} className="btn btn-secondary mx-2 my-3" onClick={handleCopy}>
        Copy Text
       </button>
     </div>
