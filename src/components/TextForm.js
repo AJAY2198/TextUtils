@@ -20,10 +20,8 @@ export default function TextForm(props) {
     setText("");
   };
   const handleCopy = ()=>{
-    let text = document.getElementById('myBox');
-    text.select();
-    text.setSelectionRange(0,99999);
-   navigator.clipboard.writeText(text.value);
+   navigator.clipboard.writeText(text);
+   props.showAlert("Copied to Clipboard!","success");
   };
 
   const handleOnChnage = (event) => {
@@ -71,7 +69,7 @@ export default function TextForm(props) {
     <div className="conatiner my-3" style={{color: props.mode==='light'?'#021a33':'white'}}>
       <h1>Your notes summry</h1>
       <p>
-       {text.split(" ").filter((str) => {return str.length !==0}).length} words and {text.length} charcters.
+       {text.split(/\s+/).filter((str) => {return str.length !==0}).length} words and {text.length} charcters.
        <br/>
        {text !=="" ? 0.008 *text.split(" ").length: 0} Minutes to read.
       </p>
